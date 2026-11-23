@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "OverBlood",
+    "id": "SLES-00768",
+    "boot_exe": "SLES_007.68"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "OverBlood (Europe).cue",
+    "bin_name": "OverBlood (Europe).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 700851312,
+      "md5": "401601e8a64f9d629a95f3effa3a6043",
+      "sha1": "51c55332ca725cceb0d7205d219fb94bdcdeb12a",
+      "crc32": "f803366b"
+    },
+    "disc_fp": "ee99034e570be2b89b0e98138b9fff3cd76d6eca9eb9d5edec9f506a19c791b9"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8006E99C",
+    "text_size": "0x000C0000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1097,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

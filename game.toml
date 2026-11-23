@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "OverBlood"
+id = "SLES-00768"
+players = 1
+exe = "disc/SLES_007.68"
+disc = "disc/OverBlood (Europe).cue"
+discs = ["disc/OverBlood (Europe).cue"]
+disc_serials = ["SLES-00768"]
+load_address = "0x80010000"
+entry_pc = "0x8006E99C"
+text_size = "0x000C0000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "OverBlood (Europe).bin"
+cue_name = "OverBlood (Europe).cue"
+boot_exe = "SLES_007.68"
+known_sizes = [700851312]
+known_md5 = [
+  "401601e8a64f9d629a95f3effa3a6043",
+]
+known_sha1 = [
+  "51c55332ca725cceb0d7205d219fb94bdcdeb12a",
+]
+known_crc32 = [
+  "f803366b",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "OverBlood Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "ee99034e570be2b89b0e98138b9fff3cd76d6eca9eb9d5edec9f506a19c791b9"
